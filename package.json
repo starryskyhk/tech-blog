@@ -10,7 +10,7 @@
     "url": "https://github.com/starryskyhk/tech-blog",
     "type": "git"
   },
-  "homepage": "https://tech.blog.starryhk.cn",
+  "homepage": "https://tech.starryhk.cn",
   "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
@@ -37,6 +37,8 @@
     "@docusaurus/plugin-pwa": "^3.1.0",
     "@docusaurus/preset-classic": "^3.1.0",
     "@docusaurus/theme-search-algolia": "^3.1.0",
+    "@docusaurus/plugin-sitemap": "^3.1.0",
+    "@docusaurus/theme-mermaid": "^3.1.0",
     "@giscus/react": "^2.3.0",
     "@popperjs/core": "^2.11.8",
     "@vercel/analytics": "^1.1.1",

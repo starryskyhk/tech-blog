@@ -8,7 +8,7 @@ const beian = '陕ICP备19023652号'
 
 const config: Config = {
   title: 'starrysky的技术博客',
-  url: 'https://tech.blog.starryhk.cn',
+  url: 'https://tech.starryhk.cn',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'starrysky',
@@ -53,6 +53,11 @@ const config: Config = {
           to: 'blog',
         },
         {
+          label: '标签',
+          position: 'right',
+          to: 'blog/tags',
+        },
+        {
           label: '笔记',
           position: 'right',
           items: [
@@ -64,18 +69,17 @@ const config: Config = {
           label: '更多',
           position: 'right',
           items: [
-            { label: '归档', to: 'blog/archive' },
-
             { label: '资源', to: 'resources' },
             { label: '友链', to: 'friends' },
+            { label: '历史博客', to: 'blog/archive' },
           ],
         },
         {
-          label: 'GitHub',
+          href: social.github?.href,
           position: 'right',
-          href: social.github?.href
-
-        }
+          className: 'header-github-logo',
+          'aria-label': 'GitHub Repo',
+        },
       ],
     },
     footer: {
@@ -85,7 +89,7 @@ const config: Config = {
           title: '学习',
           items: [
             { label: '博客', to: 'blog' },
-            { label: '归档', to: 'blog/archive' },
+            { label: '历史博客', to: 'blog/archive' },
             { label: '技术笔记', to: 'docs/tech' },
             { label: '工具笔记', to: 'docs/tools' },
             { label: '实战项目', to: 'project' }
@@ -115,7 +119,7 @@ const config: Config = {
       ],
       copyright: `
         <p style="margin-bottom: 0;"><a href="http://beian.miit.gov.cn/">${beian}</a></p>
-        <p>Copyright © 2024 - PRESENT starrysky Built with Docusaurus.</p>
+        <p>Copyright © ${new Date().getFullYear()} starrysky. Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus</a></p>
         `,
     },
     //TODO: need to confirm
@@ -151,12 +155,11 @@ const config: Config = {
         },
       ],
     },
-    //TODO: need to confirm
     giscus: {
-      repo: 'kuizuo/blog',
-      repoId: 'MDEwOlJlcG9zaXRvcnkzOTc2MjU2MTI=',
+      repo: 'starryskyhk/tech-blog',
+      repoId: 'R_kgDOLHtK_Q',
       category: 'General',
-      categoryId: 'DIC_kwDOF7NJDM4CPK95',
+      categoryId: 'DIC_kwDOLHtK_c4CclET',
       theme: 'light',
       darkTheme: 'dark_dimmed',
     } satisfies Partial<GiscusConfig>,
@@ -185,15 +188,21 @@ const config: Config = {
         theme: {
           customCss: ['./src/css/custom.scss'],
         },
-        sitemap: {
-          priority: 0.5,
-        },
         gtag: {
           trackingID: 'G-S4SD5NXWXF',
           anonymizeIP: true,
         },
         debug: process.env.NODE_ENV === 'development',
       } satisfies Preset.Options,
+    ],
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+        ignorePatterns: ['/tags/**'],
+        filename: 'sitemap.xml',
+      },
     ],
   ],
   plugins: [
@@ -256,6 +265,10 @@ const config: Config = {
         htmlLang: 'en-GB',
       },
     },
+  },
+  themes:['@docusaurus/theme-mermaid'],
+  markdown: {
+    mermaid: true,
   },
 }
 
