@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '@theme/Layout'
-import CodeBlock from '@theme/CodeBlock'
 
 import FriendCard from './_components/FriendCard'
 import { Friends } from '@site/data/friends'
@@ -10,7 +9,7 @@ import { motion } from 'framer-motion'
 
 const TITLE = '友链'
 const DESCRIPTION = '有很多良友，胜于有很多财富。'
-const ADD_FRIEND_URL = 'https://github.com/starryskyhk/techblog/edit/main/data/friends.tsx'
+const ADD_FRIEND_URL = 'https://github.com/starryskyhk/tech-blog/edit/main/data/friends.tsx'
 
 function FriendHeader() {
   return (
@@ -25,13 +24,11 @@ function FriendHeader() {
 }
 
 function FriendCards() {
-  const friends = Friends
-
   return (
     <section className="margin-top--lg margin-bottom--lg">
       <div className={styles.friendContainer}>
         <ul className={styles.friendList}>
-          {friends.map(friend => (
+          {Friends.map(friend => (
             <FriendCard key={friend.avatar} friend={friend} />
           ))}
         </ul>
