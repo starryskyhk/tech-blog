@@ -5,13 +5,13 @@ import { PageMetadata, HtmlClassNameProvider, ThemeClassNames } from '@docusauru
 import Layout from '@theme/Layout'
 import ResourceCard from './_components/ResourceCard'
 import BackToTopButton from '@theme/BackToTopButton'
-import { resourceData } from '@site/data/resources'
+import { resources } from '@site/data/resources'
 import styles from './resource.module.css'
 
 function CategorySidebar() {
   const sidebar = {
     title: '',
-    items: resourceData.map(w => ({ title: w.name, permalink: `#${w.name}` })),
+    items: resources.map(resource => ({ title: resource.name, permalink: `#${resource.name}` })),
   }
 
   return (
@@ -38,7 +38,7 @@ function CategorySidebar() {
 function CategoryList() {
   return (
     <div className={styles.category}>
-      {resourceData.map(cate => (
+      {resources.map(cate => (
         <div key={cate.name}>
           <div className={styles.cateHeader}>
             <h2 id={cate.name} className="anchor">
