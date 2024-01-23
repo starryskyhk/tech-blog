@@ -109,7 +109,7 @@ const config: Config = {
             { label: '导航', position: 'right', to: 'resources' },
             {
               html: `
-                <a href="https://docusaurus.io/zh-CN/" target="_blank" rel="noreferrer noopener">
+                <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener">
                   <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
                 <a/>
                 `,
@@ -122,11 +122,10 @@ const config: Config = {
         <p>Copyright © ${new Date().getFullYear()} starrysky. Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus</a></p>
         `,
     },
-    //TODO: need to confirm
     algolia: {
-      appId: 'GV6YN1ODMO',
-      apiKey: '50303937b0e4630bec4a20a14e3b7872',
-      indexName: 'kuizuo',
+      appId: 'ESJ34RD7VG',
+      apiKey: '892170fb25fbe78c48d6e8c25ee33cba',
+      indexName: 'tech-starryhk',
     },
     prism: {
       theme: themes.oneLight,
@@ -198,7 +197,7 @@ const config: Config = {
     [
       '@docusaurus/plugin-sitemap',
       {
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: 0.5,
         ignorePatterns: ['/tags/**'],
         filename: 'sitemap.xml',
