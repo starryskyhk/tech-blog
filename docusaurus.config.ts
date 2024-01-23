@@ -126,6 +126,10 @@ const config: Config = {
       appId: 'ESJ34RD7VG',
       apiKey: '892170fb25fbe78c48d6e8c25ee33cba',
       indexName: 'tech-starryhk',
+      contextualSearch: false,
+      searchParameters: {
+        facetFilters:[]
+      }
     },
     prism: {
       theme: themes.oneLight,
@@ -197,7 +201,7 @@ const config: Config = {
     [
       '@docusaurus/plugin-sitemap',
       {
-        changefreq: 'daily',
+        changefreq: 'weekly',
         priority: 0.5,
         ignorePatterns: ['/tags/**'],
         filename: 'sitemap.xml',
