@@ -12,11 +12,7 @@ const ResourceCard = memo(({ resource }: { resource: Resource }) => (
     className={clsx(styles.resourceCard, 'padding-vert--sm padding-horiz--md')}
   >
     <img
-      src={
-        typeof resource.logo === 'string'
-          ? resource.logo
-          : (resource.logo as { src: { src: string } })?.src?.src
-      }
+      src={resource.logo}
       alt={resource.name}
       className={clsx(styles.resourceCardImage)}
     />

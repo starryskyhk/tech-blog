@@ -1,54 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
-import Link from '@docusaurus/Link'
 import { PageMetadata, HtmlClassNameProvider, ThemeClassNames } from '@docusaurus/theme-common'
 import Layout from '@theme/Layout'
 import ResourceCard from './_components/ResourceCard'
 import BackToTopButton from '@theme/BackToTopButton'
 import { resources } from '@site/data/resources'
 import styles from './resource.module.css'
+import Menus from "@site/src/pages/resources/_components/Menus";
 
-function CategorySidebar() {
-  const sidebar = {
-    title: '',
-    items: resources.map(resource => ({ title: resource.name, permalink: `#${resource.name}` })),
-  }
-
-  return (
-    <nav className={clsx(styles.sidebar, 'thin-scrollbar')}>
-      <div className={clsx(styles.sidebarItemTitle, 'margin-bottom--md')}>{sidebar.title}</div>
-      <ul className={clsx(styles.sidebarItemList, 'clean-list')}>
-        {sidebar.items.map(item => (
-          <li key={item.permalink} className={styles.sidebarItem}>
-            <Link
-              isNavLink
-              to={item.permalink}
-              className={styles.sidebarItemLink}
-              activeClassName={styles.sidebarItemLinkActive}
-            >
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  )
+function extractDatas(items) {
+  return items.flatMap(item => item.resources? item : extractDatas(item.items));
 }
 
+//Done
 function CategoryList() {
+  const flatItems= extractDatas(resources);
   return (
     <div className={styles.category}>
-      {resources.map(cate => (
-        <div key={cate.name}>
+      {flatItems.map(item => (
+        <div key={item.name}>
           <div className={styles.cateHeader}>
-            <h2 id={cate.name} className="anchor">
-              {cate.name}
-              <a className="hash-link" href={`#${cate.name}`} title={cate.name}></a>
+            <h2 id={item.name} className="anchor">
+              {item.name}
+              <a className="hash-link" href={`#${item.name}`} title={item.name}></a>
             </h2>
           </div>
           <section>
             <ul className={styles.resourceList}>
-              {cate.resources.map(resource => (
+              {item.resources.map(resource => (
+
                 <ResourceCard key={resource.name} resource={resource} />
               ))}
             </ul>
@@ -71,10 +51,10 @@ export default function Resources() {
       <Layout>
         <div className="container margin-top--md">
           <div className="row">
-            <aside className={clsx('col col--2')}>
-              <CategorySidebar />
+            <aside className={clsx('col col--3')}>
+              <Menus/>
             </aside>
-            <main className="col col--10">
+            <main className="col col--8">
               <CategoryList />
             </main>
           </div>
