@@ -273,6 +273,7 @@ const config: Config = {
     format:'detect',
     mermaid: true,
   },
+  onBrokenAnchors:"ignore",
 }
 
 export default config
