@@ -270,6 +270,7 @@ const config: Config = {
   },
   themes:['@docusaurus/theme-mermaid'],
   markdown: {
+    format:'detect',
     mermaid: true,
   },
 }
