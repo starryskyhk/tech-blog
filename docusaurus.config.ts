@@ -192,7 +192,7 @@ const config: Config = {
           customCss: ['./src/css/custom.scss'],
         },
         gtag: {
-          trackingID: 'G-S4SD5NXWXF',
+          trackingID: 'G-02183FS29K',
           anonymizeIP: true,
         },
         debug: process.env.NODE_ENV === 'development',
@@ -212,7 +212,6 @@ const config: Config = {
     'docusaurus-plugin-image-zoom',
     'docusaurus-plugin-sass',
     '@docusaurus/plugin-ideal-image',
-    ['docusaurus-plugin-baidu-tongji', { token: 'c9a3849aa75f9c4a4e65f846cd1a5155' }],
     [
       '@docusaurus/plugin-pwa',
       {
