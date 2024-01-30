@@ -273,7 +273,9 @@ const config: Config = {
     format:'detect',
     mermaid: true,
   },
-  onBrokenAnchors:"ignore",
+  onBrokenLinks:"ignore",
+  onBrokenMarkdownLinks:"warn"
+
 }
 
 export default config
