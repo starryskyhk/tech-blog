@@ -1,6 +1,7 @@
 ---
 title: 技术笔记
 date: 2024-01-31T19:42
+slug: /tech
 keywords:
   - 前端
   - 后端

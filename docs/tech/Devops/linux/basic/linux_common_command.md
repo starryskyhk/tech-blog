@@ -1,5 +1,5 @@
 ---
-title: Linux基础
+title: Linux常用命令
 slug: /tech/devops/linux/common-command
 tag: [linux]
 date: 2024-01-31T01:45

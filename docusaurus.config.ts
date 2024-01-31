@@ -186,6 +186,7 @@ const config: Config = {
         docs: {
           path: 'docs',
           sidebarPath: 'sidebars.ts',
+          showLastUpdateTime:true,
         },
         blog: false,
         theme: {
@@ -244,7 +245,7 @@ const config: Config = {
           copyright: `Copyright © ${new Date().getFullYear()} starrysky Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
         },
       },
-    ],
+    ]
   ],
   headTags: [
     {
