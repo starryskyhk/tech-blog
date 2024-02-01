@@ -5,7 +5,7 @@ import { GiscusConfig } from './src/components/Comment'
 import social from './data/social'
 
 const beian = '陕ICP备19023652号'
-
+const chatgptURL = 'https://chatgpt.starryhk.cn'
 const config: Config = {
   title: 'starrysky的技术博客',
   url: 'https://tech.starryhk.cn',
@@ -73,6 +73,11 @@ const config: Config = {
             { label: '友链', to: 'friends' },
             { label: '历史博客', to: 'blog/archive' },
           ],
+        },
+        {
+          label: 'ChatGpt',
+          position: 'right',
+          to: chatgptURL
         },
         {
           href: social.github?.href,
