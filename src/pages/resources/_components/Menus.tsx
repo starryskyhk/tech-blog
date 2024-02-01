@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ConfigProvider, Menu } from 'antd';
 import clsx from 'clsx'
 import { resources } from "@site/data/resources"
 import styles from '../resource.module.css'
 import Link from "@docusaurus/Link";
-
 const linkComponent = <Link className={styles.resourceCardLink}/>;
-
+import {useColorMode} from '@docusaurus/theme-common';
 
 function generateMenuItem(name) {
   return (
@@ -31,21 +30,22 @@ const menus = generateMenu(resources)
 
 const Menus: React.FC = () => {
   const [collapsed] = useState(false);
-
+  const {colorMode} = useColorMode();
   return (
     <ConfigProvider
       theme={{
         components: {
           Menu: {
             darkItemBg: "#1b1b1d",
-            darkSubMenuItemBg: "#242526"
+            darkSubMenuItemBg: "#1b1b1d",
+            darkItemColor: "#FFFFFF"
           },
         },
       }}
     >
       <nav className={clsx(styles.sidebar, 'thin-scrollbar')}>
         <div style={{width: 256}}>
-          <Menu mode="inline" inlineCollapsed={collapsed}>
+          <Menu theme={colorMode} mode="inline" inlineCollapsed={collapsed}>
             {menus}
           </Menu>
         </div>
