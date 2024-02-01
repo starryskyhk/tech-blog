@@ -117,9 +117,11 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `
+      copyright:
+        `
         <p style="margin-bottom: 0;"><a href="http://beian.miit.gov.cn/">${beian}</a></p>
         <p>Copyright © ${new Date().getFullYear()} starrysky. Built with <a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer">Docusaurus</a></p>
+        <script async data-id="101442324" src="//static.getclicky.com/js"></script>
         `,
     },
     algolia: {
