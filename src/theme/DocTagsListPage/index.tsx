@@ -12,12 +12,12 @@ import type { Props } from '@theme/DocTagsListPage'
 import { Icon } from '@iconify/react'
 
 import { TagsListByFlat } from '../TagsListByLetter'
-import MyLayout from '../MyLayout'
+import MyLayoutForDocs from "@site/src/theme/MyLayoutForDocs";
 
 export default function DocTagsListPage({ tags }: Props): JSX.Element {
   const title = translateTagsPageTitle()
 
-  const [type, setType] = useState('letter')
+  const [type, setType] = useState<'list' | 'grid'>('list')
 
   return (
     <HtmlClassNameProvider
@@ -28,7 +28,7 @@ export default function DocTagsListPage({ tags }: Props): JSX.Element {
     >
       <PageMetadata title={title} />
       <SearchMetadata tag="doc_tags_list" />
-      <MyLayout>
+      <MyLayoutForDocs>
         <div
           style={{
             display: 'flex',
@@ -37,8 +37,7 @@ export default function DocTagsListPage({ tags }: Props): JSX.Element {
           }}
         >
           <h1>{title}</h1>
-          <div>
-            <div>
+          <span>
               <Icon
                 icon="ph:list"
                 width="24"
@@ -53,12 +52,11 @@ export default function DocTagsListPage({ tags }: Props): JSX.Element {
                 onClick={() => setType('grid')}
                 color={type === 'grid' ? 'var(--ifm-color-primary)' : '#ccc'}
               />
-            </div>
-          </div>
+          </span>
         </div>
-        {type === 'letter' && <TagsListByLetter tags={tags} />}
-        {type === 'flat' && <TagsListByFlat tags={tags} />}
-      </MyLayout>
+        {type === 'list' && <TagsListByLetter tags={tags} />}
+        {type === 'grid' && <TagsListByFlat tags={tags} />}
+      </MyLayoutForDocs>
     </HtmlClassNameProvider>
   )
 }
