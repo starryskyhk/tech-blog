@@ -8,7 +8,7 @@ import React, {
 } from 'react'
 import { useHistory, useLocation } from '@docusaurus/router'
 import { toggleListItem } from '@site/src/utils/jsUtils'
-import { prepareUserState } from '../../index.tsx'
+import { prepareUserState } from '../../index'
 import type { TagType } from '@site/data/users'
 
 import styles from './styles.module.css'

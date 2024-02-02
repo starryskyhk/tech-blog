@@ -1,7 +1,7 @@
 ---
 title: EC2
 slug: /tech/devops/aws/basic/EC2
-tag: [AWS,EC2,"Elastic Beanstalk","EKS","ECS"]
+tags: [AWS,EC2,"Elastic Beanstalk","EKS","ECS"]
 date: 2024-01-31T01:45
 ---
 # EC2

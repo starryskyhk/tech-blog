@@ -1,6 +1,6 @@
 ---
 slug: /tech/backend/java/high/AQS
-tag: ["java","AQS"]
+tags: ["java","AQS"]
 date: 2024-01-31T20:04
 ---
 # AQS底层原理

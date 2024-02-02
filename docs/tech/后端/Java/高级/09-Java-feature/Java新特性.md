@@ -1,6 +1,6 @@
 ---
 slug: /tech/backend/java/high/new-feature
-tag: ["java","java新特性"]
+tags: ["java","java新特性"]
 date: 2024-01-31T20:04
 author: starrysky
 ---

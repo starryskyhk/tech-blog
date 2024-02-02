@@ -1,6 +1,6 @@
 ---
 slug: /tech/backend/java/high/reflect
-tag: ["java","反射"]
+tags: ["java","反射"]
 date: 2024-01-31T20:04
 ---
 # Java反射机制

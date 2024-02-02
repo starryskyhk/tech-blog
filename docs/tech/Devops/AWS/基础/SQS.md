@@ -1,7 +1,7 @@
 ---
 title: SQS
 slug: /tech/devops/aws/basic/SQS
-tag: [AWS,"SQS"]
+tags: [AWS,"SQS"]
 date: 2024-01-31T01:45
 ---
 # SQS

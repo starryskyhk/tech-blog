@@ -1,7 +1,7 @@
 ---
 title: Kinesis
 slug: /tech/devops/aws/basic/Kinesis
-tag: [AWS,"Kinesis"]
+tags: [AWS,"Kinesis"]
 date: 2024-01-31T01:45
 ---
 # Kinesis

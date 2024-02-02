@@ -1,6 +1,6 @@
 ---
 title: 笔记模版
-tag: [testtag]
+tags: [testtag]
 slug: url
 date: 2024-01-30T20:04
 ---

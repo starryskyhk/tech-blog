@@ -1,6 +1,6 @@
 ---
 slug: /tech/backend/java/high/jvm
-tag: ["java","jvm"]
+tags: ["java","jvm"]
 date: 2024-01-31T20:04
 ---
 # JVM(一):内存区域与内存溢出异常

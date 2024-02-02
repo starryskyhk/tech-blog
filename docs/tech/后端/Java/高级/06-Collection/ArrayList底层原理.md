@@ -1,6 +1,6 @@
 ---
 slug: /tech/backend/java/high/ArrayList
-tag: ["java","ArrayList"]
+tags: ["java","ArrayList"]
 date: 2024-01-31T20:04
 ---
 

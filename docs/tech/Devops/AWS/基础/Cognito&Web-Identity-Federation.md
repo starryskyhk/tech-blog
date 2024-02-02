@@ -1,7 +1,7 @@
 ---
 title: Cognito&Web-Identity-Federation
 slug: /tech/devops/aws/basic/Cognito
-tag: [AWS,Cognito,Web-Identity-Federation]
+tags: [AWS,Cognito,Web-Identity-Federation]
 date: 2024-01-31T01:45
 ---
 # Cognito&Web-Identity-Federation

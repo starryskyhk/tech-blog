@@ -1,7 +1,7 @@
 ---
 title: Snowball
 slug: /tech/devops/aws/basic/Snowball
-tag: [AWS,"Snowball"]
+tags: [AWS,"Snowball"]
 date: 2024-01-31T01:45
 ---
 # Snowball

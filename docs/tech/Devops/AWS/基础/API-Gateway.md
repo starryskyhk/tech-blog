@@ -1,7 +1,7 @@
 ---
 title: API Gateway
 slug: /tech/devops/aws/basic/api-gateway
-tag: [AWS,api-gateway]
+tags: [AWS,api-gateway]
 date: 2024-01-31T01:45
 ---
 # API Gateway

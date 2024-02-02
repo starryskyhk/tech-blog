@@ -1,7 +1,7 @@
 ---
 title: Directory Service
 slug: /tech/devops/aws/basic/Directory-Service
-tag: [AWS,"Directory Service"]
+tags: [AWS,"Directory Service"]
 date: 2024-01-31T01:45
 ---
 # Directory Service

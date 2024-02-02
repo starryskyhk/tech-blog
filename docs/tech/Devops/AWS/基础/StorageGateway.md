@@ -1,7 +1,7 @@
 ---
 title: Storage Gateway
 slug: /tech/devops/aws/basic/Storage-Gateway
-tag: [AWS,"Storage Gateway"]
+tags: [AWS,"Storage Gateway"]
 date: 2024-01-31T01:45
 ---
 # Storage Gateway

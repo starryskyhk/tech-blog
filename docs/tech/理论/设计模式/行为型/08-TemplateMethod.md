@@ -1,6 +1,6 @@
 ---
 slug: /tech/theory/design-pattern/template-method
-tag: ["设计模式"]
+tags: ["设计模式"]
 date: 2024-01-31T19:04
 ---
 # 模板方法模式（TemplateMethod）

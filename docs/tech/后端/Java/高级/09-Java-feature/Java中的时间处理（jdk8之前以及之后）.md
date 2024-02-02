@@ -1,6 +1,6 @@
 ---
 slug: /tech/backend/java/high/jdk8-time
-tag: ["java"]
+tags: ["java"]
 date: 2024-01-31T20:04
 ---
 # Java中的时间处理（jdk8之前以及之后）

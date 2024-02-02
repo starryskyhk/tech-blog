@@ -1,6 +1,6 @@
 ---
 title: Promise基础
-tag: [promise,axios]
+tags: [promise,axios]
 slug: /tech/frontend/network/promise
 date: 2024-01-30T20:04
 ---

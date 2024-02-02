@@ -1,7 +1,7 @@
 ---
 title: STS
 slug: /tech/devops/aws/basic/STS
-tag: [AWS,"STS"]
+tags: [AWS,"STS"]
 date: 2024-01-31T01:45
 ---
 # Security Token Service

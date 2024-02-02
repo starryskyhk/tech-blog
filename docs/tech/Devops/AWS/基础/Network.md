@@ -1,7 +1,7 @@
 ---
 title: Network
 slug: /tech/devops/aws/basic/Network
-tag: [AWS,"Network"]
+tags: [AWS,"Network"]
 date: 2024-01-31T01:45
 ---
 # Network

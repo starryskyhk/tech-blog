@@ -1,7 +1,7 @@
 ---
 title: Mysql
 slug: /tech/devops/aws/basic/Mysql
-tag: [Mysql]
+tags: [Mysql]
 date: 2024-01-31T01:45
 ---
 # Mysql数据库

@@ -1,7 +1,7 @@
 ---
 title: SNS
 slug: /tech/devops/aws/basic/SNS
-tag: [AWS,"SNS"]
+tags: [AWS,"SNS"]
 date: 2024-01-31T01:45
 ---
 # SNS

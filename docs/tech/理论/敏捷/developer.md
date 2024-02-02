@@ -1,7 +1,7 @@
 ---
 title: Developer敏捷会议
 slug: /tech/theory/agility/developer/meeting
-tag: [agility]
+tags: [agility]
 date: 2024-01-31T10:15
 ---
 # Developer的职责

@@ -1,7 +1,7 @@
 ---
 title: RabbitMQ
 slug: /tech/middleware/RabbitMQ
-tag: [Rabbit]
+tags: [Rabbit]
 date: 2024-01-30T20:04
 ---
 

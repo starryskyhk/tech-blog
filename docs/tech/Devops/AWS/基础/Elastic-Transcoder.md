@@ -1,7 +1,7 @@
 ---
 title: Elastic Transcoder
 slug: /tech/devops/aws/basic/Elastic-Transcoder
-tag: [AWS,"Elastic Transcoder"]
+tags: [AWS,"Elastic Transcoder"]
 date: 2024-01-31T01:45
 ---
 # Elastic Transcoder

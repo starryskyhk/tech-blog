@@ -1,7 +1,7 @@
 ---
 title: WorkSpaces
 slug: /tech/devops/aws/basic/WorkSpaces
-tag: [AWS,"WorkSpaces"]
+tags: [AWS,"WorkSpaces"]
 date: 2024-01-31T01:45
 ---
 # Amazon WorkSpaces

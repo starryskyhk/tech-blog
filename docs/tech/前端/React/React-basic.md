@@ -1,6 +1,6 @@
 ---
 title: React基础
-tag: [react]
+tags: [react]
 slug: /tech/frontend/react/basic
 date: 2024-01-30T20:04
 ---

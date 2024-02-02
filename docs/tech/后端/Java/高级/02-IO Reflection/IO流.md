@@ -1,6 +1,6 @@
 ---
 slug: /tech/backend/java/high/io
-tag: ["java","io"]
+tags: ["java","io"]
 date: 2024-01-31T20:04
 ---
 # IO流

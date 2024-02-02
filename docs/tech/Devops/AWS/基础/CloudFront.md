@@ -1,7 +1,7 @@
 ---
 title: CloudFront
 slug: /tech/devops/aws/basic/CloudFront
-tag: [AWS,CloudFront]
+tags: [AWS,CloudFront]
 date: 2024-01-31T01:45
 ---
 # CloudFront

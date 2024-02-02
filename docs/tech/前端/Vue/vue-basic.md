@@ -1,6 +1,6 @@
 ---
 title: Vue基础
-tag: [Vue]
+tags: [Vue]
 slug: /tech/frontend/vue/basic
 date: 2024-01-30T20:04
 ---

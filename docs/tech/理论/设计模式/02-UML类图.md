@@ -1,6 +1,6 @@
 ---
 slug: /tech/theory/design-pattern/uml
-tag: ["设计模式","UML"]
+tags: ["设计模式","UML"]
 date: 2024-01-31T19:04
 ---
 # UML类图

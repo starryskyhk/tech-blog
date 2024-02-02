@@ -1,7 +1,7 @@
 ---
 title: DataBase
 slug: /tech/devops/aws/basic/DataBase
-tag: [AWS,DataBase]
+tags: [AWS,DataBase]
 date: 2024-01-31T01:45
 ---
 # DataBase

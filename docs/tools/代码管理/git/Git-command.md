@@ -1,7 +1,7 @@
 ---
 title: Git 命令
 slug: /tech/tools/git/git-command
-tag: [git]
+tags: [git]
 date: 2024-01-30T20:04
 ---
 # Git命令

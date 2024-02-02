@@ -1,7 +1,7 @@
 ---
 title: Route3
 slug: /tech/devops/aws/basic/Route3
-tag: [AWS,"Route3"]
+tags: [AWS,"Route3"]
 date: 2024-01-31T01:45
 ---
 # Route3

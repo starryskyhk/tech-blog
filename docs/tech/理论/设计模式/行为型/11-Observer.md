@@ -1,6 +1,6 @@
 ---
 slug: /tech/theory/design-pattern/observer
-tag: ["设计模式"]
+tags: ["设计模式"]
 date: 2024-01-31T19:04
 ---
 # 观察者模式(Observer)

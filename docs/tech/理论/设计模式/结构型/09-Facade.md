@@ -1,6 +1,6 @@
 ---
 slug: /tech/theory/design-pattern/facade
-tag: ["设计模式"]
+tags: ["设计模式"]
 date: 2024-01-31T19:04
 ---
 # 外观模式(Facade)

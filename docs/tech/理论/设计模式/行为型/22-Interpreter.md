@@ -1,6 +1,6 @@
 ---
 slug: /tech/theory/design-pattern/interpreter
-tag: ["设计模式"]
+tags: ["设计模式"]
 date: 2024-01-31T19:04
 ---
 # 解释器模式(Interpreter)

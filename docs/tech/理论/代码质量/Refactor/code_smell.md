@@ -1,7 +1,7 @@
 ---
 title: Code Smell
 slug: /tech/theory/code-quality/refactor/code-smell
-tag: [codeSmell]
+tags: [codeSmell]
 date: 2024-01-31T10:15
 ---
 # Code Smell

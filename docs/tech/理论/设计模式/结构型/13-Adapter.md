@@ -1,6 +1,6 @@
 ---
 slug: /tech/theory/design-pattern/adapter
-tag: ["设计模式"]
+tags: ["设计模式"]
 date: 2024-01-31T19:04
 ---
 # 适配器模式(Adapter)

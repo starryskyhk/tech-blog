@@ -1,7 +1,7 @@
 ---
 title: SWF
 slug: /tech/devops/aws/basic/SWF
-tag: [AWS,"SWF"]
+tags: [AWS,"SWF"]
 date: 2024-01-31T01:45
 ---
 # SWF

@@ -1,6 +1,6 @@
 ---
 slug: /tech/theory/design-pattern/bridge
-tag: ["设计模式"]
+tags: ["设计模式"]
 date: 2024-01-31T19:04
 ---
 # 桥接模式(Bridge)

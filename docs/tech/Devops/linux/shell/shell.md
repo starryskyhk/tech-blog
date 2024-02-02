@@ -1,7 +1,7 @@
 ---
 title: Shell基础
 slug: /tech/devops/linux/shell/basic
-tag: [shell]
+tags: [shell]
 date: 2024-01-30T20:04
 ---
 #  Shell

@@ -1,7 +1,7 @@
 ---
 title: Clean Code
 slug: /tech/theory/code-quality/clean-code
-tag: [cleanCode]
+tags: [cleanCode]
 date: 2024-01-31T10:15
 ---
 # Clean Code

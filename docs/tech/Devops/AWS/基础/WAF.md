@@ -1,7 +1,7 @@
 ---
 title: WAF
 slug: /tech/devops/aws/basic/WAF
-tag: [AWS,"WAF"]
+tags: [AWS,"WAF"]
 date: 2024-01-31T01:45
 ---
 # WAF
