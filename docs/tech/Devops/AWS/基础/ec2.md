@@ -424,7 +424,7 @@ ALB 会以 DNS (Domain Name System)的形式显示在 AWS 管理控制台，并�
 - Placement Group提供了低延迟，高速率的网络，可提供高达10 Gbps的速度
 - EC2 Placement Group的命名需要在你的AWS账户内**唯一**，不能有命名重复
 - 只有**特定的EC2实例类型**可以放在配置Placement Group内（某些计算优化型、GPU、内存优化型和存储优化型的实例）
-- AWS建议在一个Placement Group内的所有EC2实例是一模一样的，否则会有短板效应
+- AWS建议在一个Placement Group内的所有EC2实例是一模一样的(性能配置一样)，否则会有短板效应
 - 不可以合并多个EC2 Placement Group
 - 不可以将一个正在运行的EC2实例放到一个EC2 Placement Group中；只能为这个EC2实例创建一个AMI，然后基于AMI创建一个新的实例并且加入到Placement Group内
 - Placement Group**可以跨越peerd VPC**，但要保证在同一个区域内
