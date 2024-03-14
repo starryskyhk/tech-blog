@@ -42,7 +42,7 @@ AWS Serverless Application Model (AWS SAM) 是一个工具包，可改善在 AWS
 
 ![image-20240307192630056](https://picgo-starry.oss-cn-beijing.aliyuncs.com/img/note/tech/AWS/SAM-example.png)
 
-<p id="example">使用SAM模版代码编写</p>
+<p id="basic-example">使用SAM模版代码编写</p>
 
 ```yaml
 AWSTemplateFormatVersion: 2010-09-09
@@ -289,7 +289,7 @@ Properties:
     Type: AWS::Serverless::SimpleTable
   ```
 
-- 用法2:  嵌入式连接器. 如<a herf="#example">案例所示</a>
+- 用法2:  嵌入式连接器. 如<a href="#basic-example">案例所示</a>
 
 ### Function
 
@@ -372,6 +372,8 @@ Properties:
 创建 AWS AppSync GraphQL API
 
 案例: 参考[官方文档](https://docs.aws.amazon.com/zh_cn/serverless-application-model/latest/developerguide/sam-resource-graphqlapi.html#sam-resource-graphqlapi-examples).
+
+## SAM Connector
 
 ## SAM的本地开发
 
