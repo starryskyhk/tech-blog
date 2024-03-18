@@ -8,11 +8,11 @@ date: 2024-03-05T19:26
 
 ## 什么是Serverless Application
 
-​	Serverless应用是一种云计算模型，其中开发人员可以构建和部署应用程序，而无需管理底层的服务器基础架构。在传统的应用程序部署模型中，开发人员需要预先配置和管理服务器来托管应用程序，并根据预期的负载进行容量规划。
+Serverless应用是一种云计算模型，其中开发人员可以构建和部署应用程序，而无需管理底层的服务器基础架构。在传统的应用程序部署模型中，开发人员需要预先配置和管理服务器来托管应用程序，并根据预期的负载进行容量规划。
 
-​	相比之下，Serverless应用的核心思想是将服务器管理的责任转移到云服务提供商。开发人员只需专注于编写应用程序的业务逻辑，而无需关心服务器的规模、配置和管理。服务提供商负责自动缩放服务器资源，根据实际需求分配计算资源。
+相比之下，Serverless应用的核心思想是将服务器管理的责任转移到云服务提供商。开发人员只需专注于编写应用程序的业务逻辑，而无需关心服务器的规模、配置和管理。服务提供商负责自动缩放服务器资源，根据实际需求分配计算资源。
 
-​	在Serverless应用中，应用程序以函数（Function）的形式运行。这些函数是事件驱动的，可以在需要时自动触发执行。开发人员可以编写和部署一系列函数，每个函数执行特定的任务或处理特定的事件。当事件发生时，函数会被自动调用，执行相关的代码逻辑，并返回结果
+在Serverless应用中，应用程序以函数（Function）的形式运行。这些函数是事件驱动的，可以在需要时自动触发执行。开发人员可以编写和部署一系列函数，每个函数执行特定的任务或处理特定的事件。当事件发生时，函数会被自动调用，执行相关的代码逻辑，并返回结果
 
 ### AWS Serverless Resources
 
@@ -37,6 +37,14 @@ AWS Serverless Application Model (AWS SAM) 是一个工具包，可改善在 AWS
 `AWS::Serverless` 转换是由 CloudFormation 托管的宏，它获取用 AWS Serverless Application Model（AWS SAM）语法编写的整个
 
 模板，并将其转换并扩展为兼容的 CloudFormation 模板
+
+### 验证SAM模版的有效性
+
+安装SAM cli.使用以下命令
+
+```shell
+ sam validate -t <teamplateName>
+```
 
 ## SAM 案例
 
@@ -258,7 +266,7 @@ Resources:
 
 ### Application
 
-可以理解为Cloudformation的子Stack,但是Application 的Location可以指定为template或者AWS Serverless Application Repository中国呢的内容
+可以理解为Cloudformation的子Stack,但是Application 的Location可以指定为template或者AWS Serverless Application Repository中的内容
 
 ```yaml
 Type: AWS::Serverless::Application
@@ -270,26 +278,7 @@ Properties:
 
 配置两种资源之间的权限. 通过Connector，我们不需要关注与两个服务之间的权限问题，而是集中在功能上
 
-- 用法1：使用`AWS::Serverless::Connector`创建
-
-  ```yaml
-  MyConnector:
-    Type: AWS::Serverless::Connector
-    Properties:
-      Source:
-        Id: MyFunction
-      Destination:
-        Id: MyTable
-      Permissions:
-        - Read
-        - Write
-  MyFunction:
-    Type: AWS::Serverless::Function
-  MyTable:
-    Type: AWS::Serverless::SimpleTable
-  ```
-
-- 用法2:  嵌入式连接器. 如<a href="#basic-example">案例所示</a>
+具体见 <a href="#connector">SAM Connector</a>
 
 ### Function
 
@@ -373,7 +362,148 @@ Properties:
 
 案例: 参考[官方文档](https://docs.aws.amazon.com/zh_cn/serverless-application-model/latest/developerguide/sam-resource-graphqlapi.html#sam-resource-graphqlapi-examples).
 
-## SAM Connector
+## <span id="connector">SAM Connector</span>
+
+连接器是一种 AWS Serverless Application Model (AWS SAM) 抽象资源类型，标识为 `AWS::Serverless::Connector`，在无服务器应用程序资源之间提供简单且范围明确的权限。通过将 `Connectors` 资源属性嵌入到**源**资源中来使用它。然后，定义您的**目标**资源并描述数据或事件应如何在这些资源之间流动。然后 AWS SAM 编写必要的访问策略，以促进所需的交互。
+
+**优势**
+
+通过在资源之间自动编写适当的访问策略，连接器使您能够编写无服务器应用程序并专注于应用程序架构，而无需在 AWS 授权功能、策略语言和特定于服务的安全设置方面的专业知识。因此，对于可能不熟悉无服务器开发的开发人员或希望提高开发速度的经验丰富的开发人员来说，连接器十分有用。
+
+- 用法1: 使用`AWS::Serverless::Connector`创建
+
+  ```yaml
+  MyConnector:
+    Type: AWS::Serverless::Connector
+    Properties:
+      Source:
+        Id: MyFunction
+      Destination:
+        Id: MyTable
+      Permissions:
+        - Read
+        - Write
+  MyFunction:
+    Type: AWS::Serverless::Function
+  MyTable:
+    Type: AWS::Serverless::SimpleTable
+  ```
+
+- 用法2: 嵌入式
+
+  ```yaml
+  Transform: AWS::Serverless-2016-10-31
+  Resources:
+    MyTable:
+      Type: AWS::Serverless::SimpleTable
+    MyFunction:
+      Type: AWS::Serverless::Function
+      Connectors:
+        MyConn:
+          Properties:
+            Destination:
+              Id: MyTable
+            Permissions:
+              - Write
+  ```
+
+`Connectors` 资源属性嵌入在 Lambda 函数源资源中。使用 `Id` 属性将 DynamoDB 表定义为目标资源。连接器将在这两个资源之间提供 `Write` 权限。
+
+如果不在同一模版，可以使用受支持的方式，比如arn. 
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+...
+Resources:
+  MyFunction:
+    Type: AWS::Serverless::Function
+    Connectors:
+      TableConn:
+        Properties:
+          Destination:
+            Type: AWS::DynamoDB::Table
+            Arn: !GetAtt MyTable.Arn
+  ...
+```
+
+同时也可以对于同一资源创建对多个资源的Connection
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+...
+Resources:
+  MyFunction:
+    Type: AWS::Serverless::Function
+    Connectors:
+      BucketConn:
+        Properties:
+          Destination:
+            Id: MyBucket
+          Permissions:
+            - Read
+            - Write
+      SQSConn:
+        Properties:
+          Destination:
+            Id: MyQueue
+          Permissions:
+            - Read
+            - Write
+      TableConn:
+        Properties:
+          Destination:
+            Id: MyTable
+          Permissions:
+            - Read
+            - Write
+```
+
+方式二
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+...
+Resources:
+  MyFunction:
+    Type: AWS::Serverless::Function
+    Connectors:
+      WriteAccessConn:
+        Properties:
+          Destination:
+            - Id: OutputBucket
+            - Id: CredentialTable
+          Permissions:
+            - Write
+  ...
+  OutputBucket:
+    Type: AWS::S3::Bucket
+  CredentialTable:
+    Type: AWS::DynamoDB::Table
+```
+
+### Connector支持的源资源类型与目标资源类型
+
+[AWS SAM 连接器参考](https://docs.aws.amazon.com/zh_cn/serverless-application-model/latest/developerguide/reference-sam-connector.html#supported-connector-resource-types)
+
+### 连接器创建的 IAM 策略
+
+[连接器创建的 IAM 策略](https://docs.aws.amazon.com/zh_cn/serverless-application-model/latest/developerguide/reference-sam-connector.html#reference-sam-connector-policies)
 
 ## SAM的本地开发
 
+1. [安装sam cli](https://docs.aws.amazon.com/zh_cn/serverless-application-model/latest/developerguide/install-sam-cli.html)
+2. 创建一个example项目. `sam init`
+3. build项目 `sam build`
+4. 使用引导模式将项目部署到AWS  `aws deploy -guided ` . 也可以使用参数的形式
+5. 测试
+   1. 通过` sam list endpoints --output json` 获取 url
+   2. 通过curl命令调用 
+   3. 调用云端的Lambda函数 `sam remote invoke HelloWorldFunction --stack-name sam-app`
+6. 修改应用程序并将其同步到 AWS Cloud. `sam sync --watch`
+
+**本地测试**
+
+通过 `sam local invoke`  即可调用，SAM cli将启动Docker去创建一个模拟环境
