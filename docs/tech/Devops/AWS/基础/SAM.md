@@ -278,7 +278,7 @@ Properties:
 
 配置两种资源之间的权限. 通过Connector，我们不需要关注与两个服务之间的权限问题，而是集中在功能上
 
-具体见 <a href="#connector">SAM Connector</a>
+具体见 <a href="#sam-connector">SAM Connector</a>
 
 ### Function
 
@@ -362,7 +362,7 @@ Properties:
 
 案例: 参考[官方文档](https://docs.aws.amazon.com/zh_cn/serverless-application-model/latest/developerguide/sam-resource-graphqlapi.html#sam-resource-graphqlapi-examples).
 
-## <span id="connector">SAM Connector</span>
+## <span id="sam-connector">SAM Connector</span>
 
 连接器是一种 AWS Serverless Application Model (AWS SAM) 抽象资源类型，标识为 `AWS::Serverless::Connector`，在无服务器应用程序资源之间提供简单且范围明确的权限。通过将 `Connectors` 资源属性嵌入到**源**资源中来使用它。然后，定义您的**目标**资源并描述数据或事件应如何在这些资源之间流动。然后 AWS SAM 编写必要的访问策略，以促进所需的交互。
 
