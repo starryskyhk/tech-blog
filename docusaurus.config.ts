@@ -194,6 +194,8 @@ const config: Config = {
           path: 'docs',
           sidebarPath: 'sidebars.ts',
           showLastUpdateTime:true,
+          editUrl: ({versionDocsDirPath, docPath}) =>
+            `${social.github.href}/tech-blog/edit/main/${versionDocsDirPath}/${docPath}`,
         },
         blog: false,
         theme: {
@@ -237,7 +239,7 @@ const config: Config = {
       {
         path: 'blog',
         editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
-          `https://github.com/starryhksky/blog-tech/edit/main/${blogDirPath}/${blogPath}`,
+          `${social.github.href}/tech-blog/edit/main/${blogDirPath}/${blogPath}`,
         editLocalizedFiles: false,
         blogDescription: '记录学习',
         blogSidebarCount: 10,
