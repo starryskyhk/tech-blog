@@ -176,9 +176,15 @@ VPC终端节点能建立VPC和一些AWS服务之间的高速、私密的“专�
 
 ### Endpoints支持类型
 
-VPC终端有两种类型：**接口**和**网关**
+#### **接口**
 
-其中接口类型支持以下服务：
+接口终端节点支持通过 AWS PrivateLink 连接到服务。这些服务包括一些 AWS 托管服务、其他 AWS 客户和合作伙伴在其自己的 Amazon VPC 中托管的服务（称为终端节点服务）以及支持的 AWS Marketplace 合作伙伴服务。服务的所有者是服务提供者。创建接口端点并使用该服务的主体是服务使用者。
+
+1. 针对接口端点是采取 DNS 层级的调整，将相同区域的域名指向 vpc endpoint. 
+2. 接口端点听过子网实现
+3. 接口端点所绑定的安全组，需要开启HTTPS端口，以允许通过DNS的方式访问
+
+**接口类型支持以下服务：**
 
 - Amazon CloudWatch Logs
 - AWS CodeBuild
@@ -192,7 +198,14 @@ VPC终端有两种类型：**接口**和**网关**
 - 其他 AWS 账户托管的终端节点服务
 - 支持的 AWS Marketplace 合作伙伴服务
 
-网关类型支持以下服务：
+#### **网关**
+
+网关终端节点以 Amazon VPC 路由表中的特定 IP 路由为目标，采用前缀列表的形式，用于发往 Amazon DynamoDB 或 Amazon Simple Storage Service (Amazon S3) 的流量。网关终端节点不启用 AWS PrivateLink。
+
+1. gateway 类型则是将同区域 S3 的地址添加到路由表，是进行**路由层级**的调整。
+2. 通过关联路由表实现
+
+**网关类型支持以下服务：**
 
 - **Amazon S3**
 - **DynamoDB**
