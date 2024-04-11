@@ -243,6 +243,8 @@ const config: Config = {
         blogSidebarCount: 10,
         blogSidebarTitle: 'Blogs',
         postsPerPage: 10,
+        showLastUpdateAuthor:true,
+        showLastUpdateTime: true,
         showReadingTime: true,
         readingTime: ({ content, frontMatter, defaultReadingTime }) =>
           defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
