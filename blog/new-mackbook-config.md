@@ -129,18 +129,19 @@ Mac安装管理工具.官网安装
 
 | 名字                    | 用途               |                                                              |
 | ----------------------- | ------------------ | ------------------------------------------------------------ |
-| Fzf                     | 命令行历史提示工具 |                                                              |
+| Fzf                     | 命令行历史提示工具 | 使用`brew install fzf` 后使用<br />`$(brew --prefix)/opt/fzf/install`绑定快捷键 |
 | Zsh-syntax-highlighting | 终端命令行高亮     |                                                              |
 | zsh-autosuggestions     | 自动补全命令       | [GitHub](https://github.com/junegunn/fzf)                    |
 | autojump                | 自动跳转目录命令   | [GitHub](https://github.com/wting/autojump)                  |
-| zsh-you-should-use      | 提示短命令是什么   |                                                              |
+| zsh-you-should-use      | 提示短命令是什么   | [GitHub](https://github.com/MichaelAquilina/zsh-you-should-use) |
 | Bat                     | 美化cat的输出      | [GitHub](https://github.com/sharkdp/bat)                     |
 | thefuck                 | 修正手误写错的命令 | [GitHub](https://github.com/nvbn/thefuck?tab=readme-ov-file#installation) |
 | Eza                     | 等同于ls，更美观   | [GitHub](https://github.com/eza-community/eza)               |
-| tldr                    |                    |                                                              |
-| spaceship-prompt        | 更多的提示         | [GitHub](https://github.com/spaceship-prompt)                |
+| spaceship-prompt        | 更多的提示         | [GitHub](https://github.com/spaceship-prompt/spaceship-prompt)  需安装字体 [说明](https://deploy-preview-963--spaceship-prompt.netlify.app/faq/#whats-the-weird-symbol-before-the-git-branch) |
 
-#### 不需要配置，直接下载的工具
+
+
+#### 不需要配置，直接下载的开发类工具
 
 |        |                  |      |
 | ------ | ---------------- | ---- |
@@ -148,22 +149,18 @@ Mac安装管理工具.官网安装
 | nvm    | node版本管理工具 |      |
 | colima | 可以启动docker   |      |
 
-
-
-监控电脑运行状况。[GitHub](https://github.com/exelban/stats)
-
 ## 工具类软件
 
 下载清单
 
-|            |                  |      |
-| ---------- | ---------------- | ---- |
-| Dash       | ApI文档查询      |      |
-| 1password  | 密码管理         |      |
-| Dictionary | 英英字典         |      |
-| Snipaste   | 截图软件         |      |
-| Stats      | 监控电脑运行信息 |      |
-|            |                  |      |
+|            |                  |                                            |
+| ---------- | ---------------- | ------------------------------------------ |
+| Dash       | ApI文档查询      |                                            |
+| 1password  | 密码管理         |                                            |
+| Dictionary | 英英字典         |                                            |
+| Snipaste   | 截图软件         |                                            |
+| Stats      | 监控电脑运行信息 | [GitHub](https://github.com/exelban/stats) |
+|            |                  |                                            |
 
 ## 日常类软件
 
