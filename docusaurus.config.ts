@@ -171,7 +171,7 @@ const config: Config = {
       category: 'General',
       categoryId: 'DIC_kwDOLHtK_c4CclET',
       theme: 'light',
-      darkTheme: 'dark_dimmed',
+      darkTheme: 'dark_dimmed'
     } satisfies Partial<GiscusConfig>,
     tableOfContents: {
       minHeadingLevel: 2,
