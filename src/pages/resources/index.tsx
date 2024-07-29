@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import clsx from 'clsx'
+import React from 'react'
 import { PageMetadata, HtmlClassNameProvider, ThemeClassNames } from '@docusaurus/theme-common'
+import { resources } from '@site/data/resources'
+import { cn } from '@site/src/lib/utils'
+import BackToTopButton from '@theme/BackToTopButton'
 import Layout from '@theme/Layout'
 import ResourceCard from './_components/ResourceCard'
-import BackToTopButton from '@theme/BackToTopButton'
-import { resources } from '@site/data/resources'
 import styles from './resource.module.css'
 import Menus from "@site/src/pages/resources/_components/Menus";
 
@@ -45,13 +45,13 @@ export default function Resources() {
 
   return (
     <HtmlClassNameProvider
-      className={clsx(ThemeClassNames.wrapper.blogPages, ThemeClassNames.page.blogTagsListPage)}
+      className={cn(ThemeClassNames.wrapper.blogPages, ThemeClassNames.page.blogTagsListPage)}
     >
       <PageMetadata title={title} description={description} />
       <Layout>
-        <div className="container margin-top--md">
+        <div className="container margin-top--md container">
           <div className="row">
-            <aside className={clsx('col col--3')}>
+            <aside className={cn('col col--3')}>
               <Menus/>
             </aside>
             <main className="col col--8">

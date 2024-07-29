@@ -1,8 +1,9 @@
-import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
+import type { Config } from '@docusaurus/types'
 import { themes } from 'prism-react-renderer'
-import { GiscusConfig } from './src/components/Comment'
 import social from './data/social'
+import { GiscusConfig } from './src/components/Comment'
+
 
 const beian = '陕ICP备19023652号'
 const chatgptURL = 'https://chatgpt.starryhk.cn'
@@ -199,7 +200,7 @@ const config: Config = {
         },
         blog: false,
         theme: {
-          customCss: ['./src/css/custom.scss'],
+          customCss: ['./src/css/custom.css'],
         },
         gtag: {
           trackingID: 'G-02183FS29K',
@@ -220,7 +221,6 @@ const config: Config = {
   ],
   plugins: [
     'docusaurus-plugin-image-zoom',
-    'docusaurus-plugin-sass',
     '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-pwa',
@@ -245,8 +245,6 @@ const config: Config = {
         blogSidebarCount: 10,
         blogSidebarTitle: 'Blogs',
         postsPerPage: 10,
-        showLastUpdateAuthor:true,
-        showLastUpdateTime: true,
         showReadingTime: true,
         readingTime: ({ content, frontMatter, defaultReadingTime }) =>
           defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
@@ -256,7 +254,51 @@ const config: Config = {
           copyright: `Copyright © ${new Date().getFullYear()} starrysky Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
         },
       },
-    ]
+    ],
+    async function tailwindcssPlugin() {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'))
+          postcssOptions.plugins.push(require('autoprefixer'))
+          return postcssOptions
+        },
+      }
+    },
+    async function injectMotto() {
+      return {
+        name: 'docusaurus-motto',
+        injectHtmlTags() {
+          return {
+            headTags: [
+              {
+                tagName: 'script',
+                innerHTML: `
+    (${function () {
+                  console.log(
+                      `%c Kz Blog %c https://github.com/starryskyhk/tech-blog`,
+                      'color: #fff; margin: 1em 0; padding: 5px 0; background: #12affa;',
+                      'margin: 1em 0; padding: 5px 0; background: #efefef;',
+                  )
+
+                  const motto = `
+This Webisite Powered By Starrysky Blog.
+Written by Docusaurus, Coding with Love.
+--------
+Love what you do and do what you love.
+`
+
+                  if (document.firstChild?.nodeType !== Node.COMMENT_NODE) {
+                    document.prepend(document.createComment(motto))
+                  }
+                }.toString()})();`,
+              },
+            ],
+          }
+        },
+      }
+    }
   ],
   headTags: [
     {

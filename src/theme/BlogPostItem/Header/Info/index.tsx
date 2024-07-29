@@ -1,14 +1,13 @@
-import React from 'react'
-import clsx from 'clsx'
 import { translate } from '@docusaurus/Translate'
 import { usePluralForm } from '@docusaurus/theme-common'
-import { useBlogPost } from '@docusaurus/theme-common/internal'
+import { useBlogPost, useDateTimeFormat } from '@docusaurus/theme-common/internal'
+import { cn } from '@site/src/lib/utils'
 import type { Props } from '@theme/BlogPostItem/Header/Info'
-import TagsListInline from '@theme/TagsListInline'
 
-import styles from './styles.module.css'
-import Tag from '@site/src/theme/Tag'
 import { Icon } from '@iconify/react'
+import Tag from '@site/src/theme/Tag'
+import TextArea from "antd/es/input/TextArea";
+import styles from "@site/src/theme/BlogPostItem/Footer/styles.module.css";
 
 // Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
@@ -35,7 +34,7 @@ export function ReadingTime({ readingTime }: { readingTime: number }) {
   return <span className="truncate">{readingTimePlural(readingTime)}</span>
 }
 
-function Date({ date, formattedDate }: { date: string; formattedDate: string }) {
+function DateTime({ date, formattedDate }: { date: string; formattedDate: string }) {
   return (
     <time dateTime={date} itemProp="datePublished" className="truncate">
       {formattedDate}
@@ -45,37 +44,64 @@ function Date({ date, formattedDate }: { date: string; formattedDate: string }) 
 
 export default function BlogPostItemHeaderInfo({ className }: Props): JSX.Element {
   const { metadata } = useBlogPost()
-  const { date, tags, formattedDate, readingTime } = metadata
+  const { date, tags, readingTime,authors } = metadata
 
   const tagsExists = tags.length > 0
 
+  const dateTimeFormat = useDateTimeFormat({
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  })
+
+  const formatDate = (blogDate: string) => dateTimeFormat.format(new Date(blogDate))
+
   return (
-    <div className={clsx(styles.container, 'margin-bottom--md', className)}>
-      <div className={styles.date}>
-        <Icon icon="ri:calendar-line" />
-        <Date date={date} formattedDate={formattedDate} />
+      <div className={cn('inline-flex flex-wrap gap-1.5 text-base', 'margin-bottom--md', className)}>
+        <div className="inline-flex items-center gap-1">
+          <Icon icon="ri:calendar-line"/>
+          <DateTime date={date} formattedDate={formatDate(date)}/>
+        </div>
+        <div className="inline-flex items-center gap-1">
+          <Icon icon="ic:baseline-person"/>
+        <div className={cn('truncate', 'inline-flex text-center')}>
+          {authors.map((a, index) => {
+            return (
+                <span key={a.url} className="blog__author">
+                    <a href={a.url} className={styles.blogPostAuthor}>
+                      {a.name}
+                    </a>
+                  </span>
+            )
+          })}
+        </div>
+        </div>
+          {tagsExists && (
+              <div className="inline-flex items-center gap-1">
+                  <Icon icon="ri:price-tag-3-line"/>
+                  <div className={cn('truncate', 'inline-flex text-center')}>
+                {tags.slice(0, 3).map(({label, permalink: tagPermalink}, index) => {
+                  return (
+                      <div key={tagPermalink}>
+                        {index !== 0 && '/'}
+                        <Tag
+                            label={label}
+                            permalink={tagPermalink}
+                            className={'tag !border-0 px-0.5 py-0.5 text-text hover:text-link'}
+                        />
+                      </div>
+                  )
+                })}
+              </div>
+            </div>
+        )}
+        {typeof readingTime !== 'undefined' && (
+            <div className="inline-flex items-center gap-1">
+              <Icon icon="ri:time-line"/>
+              <ReadingTime readingTime={readingTime}/>
+            </div>
+        )}
       </div>
-      {tagsExists && (
-        <div className={styles.tagInfo}>
-          <Icon icon="ri:price-tag-3-line" />
-          <div className={clsx('truncate', styles.tagList)}>
-            {tags.slice(0, 3).map(({ label, permalink: tagPermalink }, index) => {
-              return (
-                <div key={tagPermalink}>
-                  {index !== 0 && '/'}
-                  <Tag label={label} permalink={tagPermalink} className={'tag'} />
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      )}
-      {typeof readingTime !== 'undefined' && (
-        <div className={styles.date}>
-          <Icon icon="ri:time-line" />
-          <ReadingTime readingTime={readingTime} />
-        </div>
-      )}
-    </div>
   )
 }

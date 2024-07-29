@@ -1,12 +1,18 @@
-import React from 'react'
-import Tooltip from '@site/src/components/Tooltip'
 import { Icon } from '@iconify/react'
 import social from '@site/data/social'
-import styles from './styles.module.scss'
+import Tooltip from '@site/src/components/Tooltip'
+import React from 'react'
+import styles from './styles.module.css'
 
 export type Social = {
   github?: string
+  twitter?: string
+  juejin?: string
   csdn?: string
+  qq?: string
+  wx?: string
+  cloudmusic?: string
+  zhihu?: string
   email?: string
 }
 
@@ -31,19 +37,11 @@ function SocialLink({ href, icon, title, color, ...prop }: Props) {
 export default function SocialLinks({ ...prop }) {
   return (
     <div className={styles.socialLinks} {...prop}>
-      {Object.entries(social).map(([key, { href, icon, title, color }]) => {
-        if (!href) return <></>
-
-        return (
-          <SocialLink
-            key={key}
-            href={href}
-            title={title}
-            icon={icon}
-            style={{ '--color': color }}
-          ></SocialLink>
-        )
-      })}
+      {Object.entries(social)
+        .filter(([_key, { href }]) => href)
+        .map(([key, { href, icon, title, color }]) => {
+          return <SocialLink key={key} href={href!} title={title} icon={icon} style={{ '--color': color }} />
+        })}
     </div>
   )
 }
