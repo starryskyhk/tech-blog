@@ -1,6 +1,6 @@
 import type { BlogSidebar } from '@docusaurus/plugin-content-blog'
 import { HtmlClassNameProvider, ThemeClassNames } from '@docusaurus/theme-common'
-import { BlogPostProvider, useBlogPost } from '@docusaurus/theme-common/internal'
+import { BlogPostProvider, useBlogPost, useDateTimeFormat } from '@docusaurus/theme-common/internal'
 import Comment from '@site/src/components/Comment'
 import { cn } from '@site/src/lib/utils'
 import BackToTopButton from '@theme/BackToTopButton'
@@ -10,7 +10,10 @@ import type { Props } from '@theme/BlogPostPage'
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata'
 import BlogPostPaginator from '@theme/BlogPostPaginator'
 import TOC from '@theme/TOC'
-import { type ReactNode } from 'react'
+import React, { type ReactNode } from 'react'
+import Editable from "antd/es/typography/Editable";
+import clsx from "clsx";
+import EditMetaRow from "@theme/EditMetaRow";
 
 function BlogPostPageContent({
   sidebar,
@@ -20,7 +23,8 @@ function BlogPostPageContent({
   children: ReactNode
 }): JSX.Element {
   const { metadata, toc } = useBlogPost()
-  const { nextItem, prevItem, frontMatter } = metadata
+
+  const { nextItem, prevItem, frontMatter ,editUrl,lastUpdatedAt,lastUpdatedBy} = metadata
   const {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
@@ -40,12 +44,21 @@ function BlogPostPageContent({
       <BlogPostItem>{children}</BlogPostItem>
 
       {(nextItem || prevItem) && (
-        <div className="margin-bottom--md">
-          <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
-        </div>
+          <div className="margin-bottom--md">
+            <EditMetaRow
+                className={clsx(
+                    'margin-top--sm',
+                    ThemeClassNames.blog.blogFooterEditMetaRow
+                )}
+                editUrl={editUrl}
+                lastUpdatedAt={lastUpdatedAt}
+                lastUpdatedBy={lastUpdatedBy}
+            />
+            <BlogPostPaginator nextItem={nextItem} prevItem={prevItem}/>
+          </div>
       )}
-      {!hideComment && <Comment />}
-      <BackToTopButton />
+      {!hideComment && <Comment/>}
+      <BackToTopButton/>
     </BlogLayout>
   )
 }
