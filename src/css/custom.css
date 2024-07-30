@@ -196,6 +196,13 @@ article p > span > a {
   }
 }
 
+@media (min-width: 500px) {
+  .container {
+    max-width: 75vw;
+  }
+
+}
+
 @media (max-width: 1100px) {
   .navbar > .container,
   .navbar > .container-fluid {
