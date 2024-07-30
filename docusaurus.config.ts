@@ -6,7 +6,7 @@ import { GiscusConfig } from './src/components/Comment'
 
 
 const beian = '陕ICP备19023652号'
-const chatgptURL = 'https://chatgpt.starryhk.cn'
+const chatgptURL = 'https://chat.starryhk.cn'
 const config: Config = {
   title: 'starrysky的技术博客',
   url: 'https://tech.starryhk.cn',
