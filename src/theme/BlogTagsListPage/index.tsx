@@ -34,6 +34,7 @@ export default function BlogTagsListPage({ tags, sidebar }: Props): JSX.Element 
               height="24"
               onClick={() => setType('list')}
               color={type === 'list' ? 'var(--ifm-color-primary)' : '#ccc'}
+              className="cursor-pointer transition duration-500"
             />
             <Icon
               icon="ph:grid-four"
@@ -41,6 +42,7 @@ export default function BlogTagsListPage({ tags, sidebar }: Props): JSX.Element 
               height="24"
               onClick={() => setType('grid')}
               color={type === 'grid' ? 'var(--ifm-color-primary)' : '#ccc'}
+              className="cursor-pointer transition duration-500"
             />
           </span>
         </div>

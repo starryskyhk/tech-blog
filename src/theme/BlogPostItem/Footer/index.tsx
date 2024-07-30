@@ -1,4 +1,5 @@
 import { useBlogPost, useDateTimeFormat } from '@docusaurus/theme-common/internal'
+// @ts-ignore
 import { Icon } from '@iconify/react'
 import { cn } from '@site/src/lib/utils'
 import ReadMoreLink from '@theme/BlogPostItem/Footer/ReadMoreLink'
@@ -32,18 +33,6 @@ export default function BlogPostItemFooter(): JSX.Element | null {
     return (
       <div style={{ position: 'relative', zIndex: 2 }}>
         <div className={styles.blogPostInfo}>
-          {/* {authorsExists && (
-            <>
-              <Icon icon="ri:user-line"  />
-              {authors.map(a => (
-                <span key={a.url} className="blog__author">
-                  <a href={a.url} className={styles.blogPostAuthor}>
-                    {a.name}
-                  </a>
-                </span>
-              ))}
-            </>
-          )} */}
           {date && (
               <>
                 <Icon icon="ri:calendar-line"/>
@@ -71,7 +60,7 @@ export default function BlogPostItemFooter(): JSX.Element | null {
                 <Icon icon="ri:price-tag-3-line"/>
                 <span className={styles.blogPostInfoTags}>
                 {tags.map(({label, permalink: tagPermalink}) => (
-                    <Tag label={label} permalink={tagPermalink} key={tagPermalink}/>
+                    <Tag label={label} permalink={tagPermalink} key={tagPermalink} description={'label'}/>
                 ))}
               </span>
               </>

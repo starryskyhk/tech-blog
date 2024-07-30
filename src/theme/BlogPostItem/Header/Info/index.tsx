@@ -4,6 +4,7 @@ import { useBlogPost, useDateTimeFormat } from '@docusaurus/theme-common/interna
 import { cn } from '@site/src/lib/utils'
 import type { Props } from '@theme/BlogPostItem/Header/Info'
 
+// @ts-ignore
 import { Icon } from '@iconify/react'
 import Tag from '@site/src/theme/Tag'
 import TextArea from "antd/es/input/TextArea";
@@ -89,6 +90,7 @@ export default function BlogPostItemHeaderInfo({ className }: Props): JSX.Elemen
                             label={label}
                             permalink={tagPermalink}
                             className={'tag !border-0 px-0.5 py-0.5 text-text hover:text-link'}
+                            description={label}
                         />
                       </div>
                   )
