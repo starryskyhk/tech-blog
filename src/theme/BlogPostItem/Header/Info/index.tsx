@@ -3,11 +3,8 @@ import { usePluralForm } from '@docusaurus/theme-common'
 import { useBlogPost, useDateTimeFormat } from '@docusaurus/theme-common/internal'
 import { cn } from '@site/src/lib/utils'
 import type { Props } from '@theme/BlogPostItem/Header/Info'
-
-// @ts-ignore
 import { Icon } from '@iconify/react'
 import Tag from '@site/src/theme/Tag'
-import TextArea from "antd/es/input/TextArea";
 import styles from "@site/src/theme/BlogPostItem/Footer/styles.module.css";
 
 // Very simple pluralization: probably good enough for now

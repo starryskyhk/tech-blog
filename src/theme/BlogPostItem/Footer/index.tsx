@@ -1,5 +1,4 @@
 import { useBlogPost, useDateTimeFormat } from '@docusaurus/theme-common/internal'
-// @ts-ignore
 import { Icon } from '@iconify/react'
 import { cn } from '@site/src/lib/utils'
 import ReadMoreLink from '@theme/BlogPostItem/Footer/ReadMoreLink'

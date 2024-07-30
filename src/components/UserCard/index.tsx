@@ -4,7 +4,6 @@ import { useThemeConfig } from '@docusaurus/theme-common'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { usePluginData } from '@docusaurus/useGlobalData'
-// @ts-ignore
 import { Icon } from '@iconify/react'
 import SocialLinks from '@site/src/components/SocialLinks'
 import { cn } from '@site/src/lib/utils'

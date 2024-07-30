@@ -7,7 +7,6 @@ import BlogPostItems from '@theme/BlogPostItems'
 import SearchMetadata from '@theme/SearchMetadata'
 
 import Translate from '@docusaurus/Translate'
-// @ts-ignore
 import { Icon } from '@iconify/react'
 import { type ViewType, useViewType } from '@site/src/hooks/useViewType'
 import BlogPostGridItems from '../BlogPostGridItems'
