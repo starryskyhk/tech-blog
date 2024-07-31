@@ -196,11 +196,8 @@ article p > span > a {
   }
 }
 
-@media (min-width: 500px) {
-  .container {
-    max-width: 75vw;
-  }
-
+.container {
+  max-width: 75vw !important;
 }
 
 @media (max-width: 1100px) {
