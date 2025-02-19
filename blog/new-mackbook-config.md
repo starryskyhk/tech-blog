@@ -57,8 +57,9 @@ keywords: [macbook,新电脑,配置]
 | ------------------------------- | ---------------------------------------------- | ---- |
 | AceJump                         | 快速跳转到指定位置                             |      |
 | Alibaba Java Coding Guidelines  | 根据阿里巴巴标准，检查代码中的问题             |      |
+| Atom Material Ico               | 定制图标                                       |      |
 | Codota AI Autocomplete for Java | 使用AI帮助提示代码(优先GitHub Copilot)         |      |
-| camelCase                       | 快速转换命名格式                               |      |
+| CamelCase                       | 快速转换命名格式                               |      |
 | Flyway Migration Creation       | 创建Flyway Migration                           |      |
 | GitHub Copilot                  | AI, 简化写代码的过程                           |      |
 | JSON Parser                     | 格式化json                                     |      |
@@ -67,12 +68,12 @@ keywords: [macbook,新电脑,配置]
 | Key Promoter X                  | 快速学习快捷键                                 |      |
 | Maven Helper                    | 依赖分析、依赖图可视化、依赖版本管理等         |      |
 | MybatisCodeHelperPro            | 简化Mybatis的工作                              |      |
+| Material Theme UI Lite          | 美化IDEA主题                                   |      |
 | Rainbow Brackets Lite           | 彩虹括号                                       |      |
 | Ruby                            | 识别Ruby语法，高亮                             |      |
 | Star Wars Progress Bar          | 星球大战进度条                                 |      |
 | Terraform and HCL               | 识别Terraform语法                              |      |
 | Translation                     | 翻译                                           |      |
-|                                 |                                                |      |
 
 #### VSCode
 
