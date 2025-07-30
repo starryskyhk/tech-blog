@@ -12,6 +12,12 @@ keywords: [macbook,新电脑,配置]
 <!-- truncate -->
 
 # 全新的一台MacBook,我需要安装哪些东西
+## 数据同步
+
+For Mac
+
+我们可以使用**Google Drive**来同步我们的数据
+
 ## Chrome插件
 
 |                                   | 用途                                      |                |
@@ -103,6 +109,8 @@ Mac安装管理工具.官网安装
 
 优化美化Mac terminal. 官网安装
 
+这是一个配置好备份文件
+
 **配置**
 
 1. 修改choose的快捷键，方便快速切换iterm窗口![Screenshot 2024-04-09 at 00.07.53](https://picgo-starry.oss-cn-beijing.aliyuncs.com/img/note/tech/Screenshot%202024-04-09%20at%2000.07.53.png)
@@ -166,3 +174,5 @@ Mac安装管理工具.官网安装
 
 ## 日常类软件
 
+- 腾讯视频/优酷视频/爱奇艺
+- 企业微信/微信/QQ
